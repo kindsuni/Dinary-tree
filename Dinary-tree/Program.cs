@@ -10,18 +10,18 @@ namespace Dinary_tree
     {
         class BinaryTreeNode
         {
-            public int val;
-            public BinaryTreeNode left;
-            public BinaryTreeNode right;
+            public int val; //받을값
+            public BinaryTreeNode left; //왼쪽 배치 
+            public BinaryTreeNode right; //오른쪽 배치
 
-            public BinaryTreeNode()
+            public BinaryTreeNode() //초기화용 메소드
             {
                 val = 0;
                 left = null;
                 right = null;
             }
 
-            public BinaryTreeNode(int _val)
+            public BinaryTreeNode(int _val) // 인트형 값을 받아서 val에 저장하고 left,right는 초기화
             {
                 val = _val;
                 left = null;
@@ -31,16 +31,16 @@ namespace Dinary_tree
 
         class BinaryTree
         {
-            BinaryTreeNode root;
+            BinaryTreeNode root; //바이너리형 뿌리를 저장할 변수 생성
 
             public void Insert(BinaryTreeNode parent, BinaryTreeNode left, BinaryTreeNode right)
             {
-                parent.left = left;
+                parent.left = left;  //Node를 받아 부모와 왼쪽 오른쪽 자식을 지정
                 parent.right = right;
 
             }
 
-            void TravelsByPre(BinaryTreeNode _root)
+            void TravelsByPre(BinaryTreeNode _root) //전위 방식
             {
                 Console.Write(_root.val + " ");
                 if (_root.left != null)
@@ -49,8 +49,8 @@ namespace Dinary_tree
                     TravelsByPre(_root.right);
             }
 
-            public void TravelsByPre()
-            {
+            public void TravelsByPre() //메소드가 실행되면 바이너리형 뿌리의 값을 저장후
+            {                          // 바이너리형값을 받는 메소드 실행
                 TravelsByPre(root);
             }
 
